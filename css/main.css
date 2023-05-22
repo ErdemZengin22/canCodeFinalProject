@@ -88,6 +88,7 @@ padding:20px;
 	text-align: center;
 	padding:20px 0;
 }
+/* FOOTER START */
 footer{
 	max-width:100%;
 	background-color:#141a26;
@@ -98,13 +99,17 @@ footer{
 	justify-content: center;
 	gap:20px;
 }
-.about p{
+.about p, .credits p{
 	font-weight: 300;
 	color:#fff;
 }
 .about a {
 	color:#8679d9;
 }
-.credits img {
-	width:200px;
+.credits p{
+	font-size:12px;
 }
+.credits img {
+	width:75px;
+}
+/* FOOTER END*/
