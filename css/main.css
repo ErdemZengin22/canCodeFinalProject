@@ -79,7 +79,8 @@ padding:20px;
 	position:relative;
 	display:flex;
 	flex-direction: column;
-	justify-content: space-between;
+	justify-content: flex-start;
+	gap:10px;
 	z-index: 2;
 }
 .movie-item-background-filter{
@@ -104,10 +105,10 @@ padding:20px;
 }
 .movie-item h2{
 	color:#fff;
-	font-weight: bold;
-	font-size:18px;
-	text-align: center;
-	padding:20px 0;
+	font-weight: 400;
+	font-size:16px;
+	text-align: left;
+	padding:10px 0 20px 0;
 }
 .movie-release-date {
 	color:#8679d9;

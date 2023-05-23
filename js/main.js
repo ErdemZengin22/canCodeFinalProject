@@ -8,7 +8,6 @@
       const response = await fetch (`https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`);
       const data = await response.json();
       const movies = data.results;
-      console.log (movies);
       let counter = 0;
 
       movies.forEach(async movie => {
@@ -54,7 +53,6 @@
       const response = await fetch (`https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}`);
       const data = await response.json();
       const movies = data.results;
-      console.log(movies);
       let counter = 0;
 
       const formatDate = (dateResponse) => {
@@ -109,18 +107,24 @@
   const searchMovies = async () => {
     const userInput = searchInput.value;
     try{
-      const response = await fetch(`https://api.themoviedb.org/3/search/movie?include_adult=false&api_key=${API_KEY}&query=${userInput}`);
+      const response = await fetch(`https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&api_key=${API_KEY}&query=${userInput}`);
       const data = await response.json();
-      let movies = data.results;
+      let movies = data.results.slice(0, 6);
+      
     
-    const searchContainer = document.querySelector('.nav-item.search')
+    const searchContainer = document.querySelector('.nav-item.search');
+    const existingSearchResults = document.querySelector('#search-results');
+    if (existingSearchResults) {
+      searchContainer.removeChild(existingSearchResults);
+    }
     const searchResults = document.createElement('div');
     searchResults.id = 'search-results';
     searchContainer.appendChild(searchResults);
 
     movies = movies.filter(movie => movie.poster_path);
-
+    
     movies.forEach(async (movie) => {
+      
       const movieItem = document.createElement('div');
       movieItem.classList.add('movie-item');
       movieItem.style.backgroundImage = `url('https://image.tmdb.org/t/p/w500${movie.backdrop_path}')`;
@@ -161,6 +165,7 @@
         console.log(error);
       }
     });
+
     window.addEventListener('click', (event) => {
       if (searchResults.parentNode && !searchResults.contains(event.target)) {
         searchResults.parentNode.removeChild(searchResults);
@@ -171,6 +176,7 @@
     catch (error) {
       console.log(error);
     }
+    
   }
   
   searchInput.addEventListener('input', searchMovies);
