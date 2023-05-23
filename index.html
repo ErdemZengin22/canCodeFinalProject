@@ -9,7 +9,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css" >
-  <script src="js/main.js" defer></script>
+  <script type="module" src="js/api.js" defer></script>
+  <script type="module" src="js/main.js" defer></script>
 </head>
 <body>
   <header>
@@ -19,7 +20,7 @@
         <img src="img/cancode.png" />CanCode Movies
         </div>
         <div class="nav-item search">
-          Search Bar
+          <input id="movie-search" type="search" placeholder="Search">
           </div>
           <div class="nav-item navigation">
             Navigation Bar
