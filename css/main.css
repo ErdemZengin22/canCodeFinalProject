@@ -60,20 +60,37 @@ padding:20px;
 	color:#8679d9;
 	font-size:42px;
 }
-#latest-movies{
+#latest-movies, #upcoming-movies{
 	width:100%;
 	max-width: 1200px;
 	padding:20px 100px;
 	display:grid;
 	gap:10px;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 }
 .movie-item{
-	padding:20px;
+	padding:10px;
 	border-radius: 3px;
 	border:1px solid #5833a6;
-	background-color:#141a26;
+	background-size: cover;
+	background-position: center;
+	backdrop-filter: blur(100px);
 	cursor:pointer;
+	position:relative;
+	display:flex;
+	flex-direction: column;
+	justify-content: space-between;
+	z-index: 2;
+}
+.movie-item-background-filter{
+	width:100%;
+	height: 100%;
+	background-color:rgba(20, 26, 38, 0.8);
+	backdrop-filter:blur(10px);
+	position:absolute;
+	top:0;
+	left:0;
+	z-index:-1;
 }
 .movie-item:hover{
 	border-color: #8679d9;
@@ -84,9 +101,20 @@ padding:20px;
 .movie-item h2{
 	color:#fff;
 	font-weight: bold;
-	font-size:22px;
+	font-size:18px;
 	text-align: center;
 	padding:20px 0;
+}
+.movie-release-date {
+	color:#8679d9;
+	text-align: center;
+	font-size:16px;
+	font-weight: 400;
+}
+.seperator {
+	width:100%;
+	background-color: #141a26;
+	height: 25px;
 }
 /* FOOTER START */
 footer{
@@ -113,3 +141,59 @@ footer{
 	width:75px;
 }
 /* FOOTER END*/
+/*HEADER START*/
+nav {
+	width:100%;
+	background-color:#141a26;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	padding:20px;
+}
+.nav-inner-container{
+	max-width: 1200px;
+	width:100%;
+	display:grid;
+	grid-template-columns: repeat(3,1fr);
+}
+.nav-item{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	color:#fff;
+}
+.nav-item.logo{
+	text-align: center;
+	cursor:pointer;
+}
+.nav-item.logo img {
+	max-width: 20px;
+	margin-right:10px;
+	transition:all .2s ease;
+}
+.nav-item.logo img:hover{
+animation:spin 0.6s forwards;
+}
+.nav-item.logo img:active{
+	animation:bounce 0.2s;
+	}
+@keyframes  spin {
+	0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/*HEADER END*/
