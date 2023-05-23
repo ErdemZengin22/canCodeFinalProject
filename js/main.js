@@ -8,10 +8,10 @@
       const response = await fetch (`https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`);
       const data = await response.json();
       const movies = data.results;
-
+      console.log (movies);
       let counter = 0;
 
-      movies.forEach(movie => {
+      movies.forEach(async movie => {
         if (counter >= 4) {
           return; 
         }
@@ -30,6 +30,19 @@
         latestMovies.appendChild(movieItem);
 
         counter++;
+
+        try {
+          const movieDetailsResponse = await fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${API_KEY}`);
+          const movieDetails = await movieDetailsResponse.json();
+          const imdbId = movieDetails.imdb_id;
+          const imdbLink = `https://www.imdb.com/title/${imdbId}`;
+  
+          movieItem.addEventListener('click', () => {
+            window.location.href = imdbLink;
+          });
+        } catch (error) {
+          console.log(error);
+        }
       });
     }
     catch(error){
@@ -41,7 +54,7 @@
       const response = await fetch (`https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}`);
       const data = await response.json();
       const movies = data.results;
-
+      console.log(movies);
       let counter = 0;
 
       const formatDate = (dateResponse) => {
@@ -50,7 +63,7 @@
         return date.toLocaleDateString('en-US', options);
       };
 
-      movies.forEach(movie => {
+      movies.forEach(async movie => {
         if (counter >= 4) {
           return; 
         }
@@ -74,6 +87,19 @@
         movieItem.appendChild(movieDate);
 
         counter++;
+
+        try {
+          const movieDetailsResponse = await fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${API_KEY}`);
+          const movieDetails = await movieDetailsResponse.json();
+          const imdbId = movieDetails.imdb_id;
+          const imdbLink = `https://www.imdb.com/title/${imdbId}`;
+  
+          movieItem.addEventListener('click', () => {
+            window.location.href = imdbLink;
+          });
+        } catch (error) {
+          console.log(error);
+        }
       });
     }
     catch(error){
@@ -86,8 +112,6 @@
       const response = await fetch(`https://api.themoviedb.org/3/search/movie?include_adult=false&api_key=${API_KEY}&query=${userInput}`);
       const data = await response.json();
       let movies = data.results;
-
-    let counter = 0; 
     
     const searchContainer = document.querySelector('.nav-item.search')
     const searchResults = document.createElement('div');
@@ -96,7 +120,7 @@
 
     movies = movies.filter(movie => movie.poster_path);
 
-    movies.forEach((movie) => {
+    movies.forEach(async (movie) => {
       const movieItem = document.createElement('div');
       movieItem.classList.add('movie-item');
       movieItem.style.backgroundImage = `url('https://image.tmdb.org/t/p/w500${movie.backdrop_path}')`;
@@ -123,6 +147,19 @@
       rightContainer.appendChild(movieOverview);
       movieItem.insertAdjacentElement('beforeend', movieItemBackgroundFilter);
       searchResults.appendChild(movieItem);
+
+      try {
+        const movieDetailsResponse = await fetch(`https://api.themoviedb.org/3/movie/${movie.id}?api_key=${API_KEY}`);
+        const movieDetails = await movieDetailsResponse.json();
+        const imdbId = movieDetails.imdb_id;
+        const imdbLink = `https://www.imdb.com/title/${imdbId}`;
+
+        movieItem.addEventListener('click', () => {
+          window.location.href = imdbLink;
+        });
+      } catch (error) {
+        console.log(error);
+      }
     });
     window.addEventListener('click', (event) => {
       if (searchResults.parentNode && !searchResults.contains(event.target)) {
@@ -135,6 +172,7 @@
       console.log(error);
     }
   }
+  
   searchInput.addEventListener('input', searchMovies);
   topMovies();
   comingMovies();

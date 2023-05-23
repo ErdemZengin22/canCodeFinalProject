@@ -91,9 +91,13 @@ padding:20px;
 	top:0;
 	left:0;
 	z-index:-1;
+	transition:all .2s ease;
 }
 .movie-item:hover{
 	border-color: #8679d9;
+}
+.movie-item:hover .movie-item-background-filter{
+	background-color:rgba(88,51,165,0.5);
 }
 .movie-item img{
 	max-width: 100%;
