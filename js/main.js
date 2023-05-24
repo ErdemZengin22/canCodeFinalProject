@@ -1,4 +1,5 @@
 (function(){
   topMovies();
   comingMovies();
+  topPeople();
 })();
