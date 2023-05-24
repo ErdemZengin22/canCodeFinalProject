@@ -79,7 +79,14 @@ padding:20px;
 	border-bottom:1px solid #8679d9;
 	cursor: default;
 }
-#top-movies, #upcoming-movies, #top-people{
+.sub-title{
+	font-size:22px;
+	color:#fff;
+	padding-bottom:3px;
+	border-bottom:1px solid #8679d9;
+	cursor: default;
+}
+#top-movies, #upcoming-movies, #top-people, #filter{
 	width:100%;
 	max-width: 1200px;
 	padding:20px 100px;
@@ -164,6 +171,21 @@ padding:20px;
 	background-color: #141a26;
 	height: 25px;
 }
+/*FILTER SECTION START*/
+.filter-options{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	padding:20px;
+}
+.filter-option {
+	background-color:#141a26;
+	color:#f8d000;
+	padding:20px;
+	border-radius: 3px;
+	border:1px solid #5833a6;
+}
+/*FILTER SECTION END*/
 /* FOOTER START */
 footer{
 	max-width:100%;

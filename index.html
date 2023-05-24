@@ -14,6 +14,7 @@
   <script type="module" src="js/upcoming-movies.js" defer></script>
   <script type="module" src="js/search.js" defer></script>
   <script type="module" src="js/top-people.js" defer></script>
+  <script type="module" src="js/filter.js" defer></script>
   <script type="module" src="js/main.js" defer></script>
   <script type="module" src="js/today.js" defer></script>
 </head>
@@ -57,7 +58,15 @@
 </div>
 <div class="seperator"></div>
 <div class="section-div">
-  <h1 class="section-title blue">Filter</h1>
+  <h1 class="section-title blue">Filter<br><span class="sub-title">Filters among popular movies</span></h1>
+  <div class="filter-options">
+    <div class="filter-option">
+      <label>
+        Genre:
+        <select id="genre-dropdown"></select>
+      </label>
+    </div>
+  </div>
   <section id="filter">
     
   </section>

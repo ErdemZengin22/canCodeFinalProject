@@ -2,4 +2,5 @@
   topMovies();
   comingMovies();
   topPeople();
+  movieFilter();
 })();
