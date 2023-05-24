@@ -49,6 +49,18 @@ table {
 body{
 	font-family: 'Jost', sans-serif;
 }
+.green{
+	color:#69bf4a;
+}
+.pink{
+	color:#e41395;
+}
+.yellow{
+	color:#f8d000;
+}
+.blue{
+	color:#00b2e2;
+}
 .section-div{
 display:flex;
 justify-content: center;
@@ -57,10 +69,17 @@ flex-direction: column;
 padding:20px;
 }
 .section-title{
-	color:#8679d9;
 	font-size:42px;
+	text-align: center;
 }
-#latest-movies, #upcoming-movies{
+#current-date {
+	font-size:22px;
+	color:#fff;
+	padding-bottom:3px;
+	border-bottom:1px solid #8679d9;
+	cursor: default;
+}
+#top-movies, #upcoming-movies{
 	width:100%;
 	max-width: 1200px;
 	padding:20px 100px;
@@ -112,7 +131,7 @@ padding:20px;
 }
 .movie-release-date {
 	color:#8679d9;
-	text-align: center;
+	text-align: left;
 	font-size:16px;
 	font-weight: 400;
 }
@@ -233,6 +252,50 @@ font-size:12px;
 	flex-direction: column;
 	gap:10px;
 }
+.nav-item.navigation{
+	display:flex;
+	gap:10px;
+}
+.menu-item{
+text-decoration: none;
+color:#fff;
+transition: all .1s ease;
+}
+.menu-item:nth-child(1){
+	color:#69bf4a;
+}
+.menu-item:nth-child(2){
+	color:#e41395;
+}
+.menu-item:nth-child(3){
+	color:#f8d000;
+}
+.menu-item:nth-child(4){
+	color:#00b2e2;
+}
+.menu-item:hover, .menu-item:active, .menu-item:focus {
+	transform:translateY(-1px) rotate(2deg);
+}
+/*HEADER END*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*ANIMATION KEYFRAMES*/
 @keyframes  spin {
 	0% {
     transform: rotate(0deg);
@@ -252,4 +315,3 @@ font-size:12px;
     transform: translateY(0);
   }
 }
-/*HEADER END*/

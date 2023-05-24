@@ -10,7 +10,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css" >
   <script type="module" src="js/api.js" defer></script>
+  <script type="module" src="js/top-movies.js" defer></script>
+  <script type="module" src="js/upcoming-movies.js" defer></script>
+  <script type="module" src="js/search.js" defer></script>
   <script type="module" src="js/main.js" defer></script>
+  <script type="module" src="js/today.js" defer></script>
 </head>
 <body>
   <header>
@@ -20,23 +24,40 @@
         <img src="img/cancode.png" />CanCode Movies
         </div>
         <div class="nav-item search">
-          <input id="movie-search" type="search" placeholder="Search">
+          <input id="movie-search" type="search" autofocus placeholder="Search Movies" >
           </div>
           <div class="nav-item navigation">
-            Navigation Bar
+            <a class="menu-item" href="#top-movies">Top Movies</a>
+            <a class="menu-item" href="#upcoming-movies">Upcoming</a>
+            <a class="menu-item" href="#top-people">Top People</a>
+            <a class="menu-item" href="#filter">Filter</a>
             </div>
       </div>
     </nav>
   </header>
   <div class="section-div">
-    <h1 class="section-title">Today's Top 4</h1>
-  <section id="latest-movies">
+    <h1 class="section-title green">Today's Top 4<br><span id="current-date"></span></h1>
+  <section id="top-movies">
   </section>
 </div>
 <div class="seperator"></div>
 <div class="section-div">
-  <h1 class="section-title">Upcoming</h1>
+  <h1 class="section-title pink">Upcoming</h1>
   <section id="upcoming-movies">
+    
+  </section>
+</div>
+<div class="seperator"></div>
+<div class="section-div">
+  <h1 class="section-title yellow">Top People</h1>
+  <section id="top-people">
+    
+  </section>
+</div>
+<div class="seperator"></div>
+<div class="section-div">
+  <h1 class="section-title blue">Filter</h1>
+  <section id="filter">
     
   </section>
 </div>
