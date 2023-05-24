@@ -124,13 +124,37 @@ padding:20px;
 }
 .movie-item h2{
 	color:#fff;
-	font-weight: 400;
+	font-weight: 500;
 	font-size:16px;
 	text-align: left;
-	padding:10px 0 20px 0;
+	padding:0 0 20px 0;
+}
+.movie-rating{
+	color:#fff;
+	font-weight: bold;
+	padding-left:25px;
+	position:relative;
+	font-size:18px;
+}
+.movie-rating:before{
+	content:'';
+	display:block;
+	position:absolute;
+	top:0;
+	left:0;
+	width:18px;
+	height: 18px;
+	background-image:url('../img/ratingStar.svg');
+	background-size:contain;
+}
+.movie-actors{
+	font-size:14px;
+	font-weight:300;
+	color:#fff;
+	line-height: 18px;
 }
 .movie-release-date {
-	color:#8679d9;
+	color:#f8d000;
 	text-align: left;
 	font-size:16px;
 	font-weight: 400;
