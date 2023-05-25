@@ -1,0 +1,13 @@
+@media (max-width:959px){
+.nav-inner-container{
+  grid-template-columns: repeat(1,1fr);
+  gap:20px;
+}
+#top-movies, #upcoming-movies, #top-people, #filter{
+	width:100%;
+	padding:10px;
+	display:grid;
+	gap:10px;
+	grid-template-columns: repeat(2, 1fr);
+}
+}

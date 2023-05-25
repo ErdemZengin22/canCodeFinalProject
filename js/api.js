@@ -1,5 +1,5 @@
 (function (){
-  const API_KEY = '20fa8e9fd0c7311256a7409b62232ce1';
+  const API_KEY = '44e63b6adc385225b3fdf4daca738d19';
 
   window.API_KEY = API_KEY;
 })();
