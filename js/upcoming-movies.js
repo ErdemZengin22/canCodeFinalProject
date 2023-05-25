@@ -2,10 +2,9 @@
   const upcomingMovies = document.querySelector('#upcoming-movies');
   const comingMovies = async () => {
     try{
-      const response = await fetch (`https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}`);
+      const response = await fetch (`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&primary_release_date.gte=2023-06-01`);
       const data = await response.json();
       const movies = data.results.slice(0, 4);
-
       const formatDate = (dateResponse) => {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const date = new Date(dateResponse);
@@ -26,6 +25,10 @@
         movieItem.appendChild(movieTitle);
         movieItem.insertAdjacentElement('beforeend', movieItemBackgroundFilter);
         upcomingMovies.appendChild(movieItem);
+        const hypeScore = document.createElement('div');
+        hypeScore.classList.add('hype-score');
+        hypeScore.innerText = 'Hype: ' + movie.popularity.toFixed(0);
+        movieItem.appendChild(hypeScore);
         const movieDate = document.createElement('p');
         const formattedDate = formatDate(movie.release_date);
         movieDate.innerHTML = `<span>Releasing:</span> ${formattedDate}`;
